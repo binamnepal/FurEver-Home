@@ -1,0 +1,42 @@
+
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    font-style: inherit;
+    background: white;
+
+}
+
+
+#loginlink {
+    text-align: right;
+
+}
+
+#loginlink a {
+    text-decoration: none;
+    background: #007bff;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+#loginlink a:hover {
+    background: #0056b3;
+}
+
+
+h1 {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #333;
+}
+.logo{
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}

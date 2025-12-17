@@ -1,0 +1,155 @@
+
+:root {
+  --purple: #6a0dad;
+  --purple-dark: #4b1d95;
+  --orange: #ff7a2a;
+  --gray-light: #f4f4f7;
+}
+
+.donation-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #faf7ff, #fdfdfd);
+}
+
+/* HERO */
+.donation-hero {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--purple-dark), var(--purple));
+  color: white;
+}
+
+.donation-hero h1 {
+  font-size: 48px;
+  font-weight: 900;
+}
+
+.donation-hero p {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* MAIN SECTION */
+.donation-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: -60px auto 0;
+  padding: 20px;
+}
+
+/* CARD */
+.donation-card {
+  background: white;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.donation-card h2 {
+  margin-bottom: 20px;
+}
+
+.amount-options {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.amount-options button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid var(--gray-light);
+  background: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.amount-options button.active {
+  background: var(--orange);
+  color: black;
+  border-color: var(--orange);
+}
+
+.donation-card input {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.donate-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--orange), #ff9555);
+  color: purple;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.donate-btn:hover {
+  opacity: 0.9;
+}
+
+.secure-text {
+  margin-top: 10px;
+  text-align: center;
+  color: #666;
+}
+
+/* INFO */
+.donation-info {
+  background: white;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.donation-info h3 {
+  margin-bottom: 15px;
+  color: var(--purple-dark);
+}
+
+.donation-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.donation-info li {
+  margin-bottom: 12px;
+  font-size: 17px;
+}
+
+@media (max-width: 900px) {
+  .donation-section {
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+  }
+}
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: black;
+  border: none;
+  color: purple;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+.back-btn:hover {
+  background:purple
+  (255, 255, 255, 0.35);
+}
