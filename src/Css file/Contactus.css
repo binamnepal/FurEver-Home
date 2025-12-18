@@ -1,0 +1,122 @@
+/* Reset and base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 1. Body Fix: Center the container without squeezing it */
+
+/* 2. Container Fix: Center using margin instead of flex on body */
+.container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto; /* Standard centering */
+    display: block; 
+}
+.intro-text {
+    
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333333 !important; /* Forced visibility */
+}
+
+/* Back Link Styling */
+.back-link-contact {
+    text-decoration: none;
+    background: #800080;
+    color: white !important;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 16px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* Headings - Forced Visibility */
+h1 {
+    text-align: center;
+    font-size: 48px;
+    color: #6a0dad !important;
+    margin-bottom: 30px;
+}
+
+/* 3. Card Fix: Ensure it fills the container width */
+.card {
+    background: #ffffff !important;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 100% !important; 
+    display: block;
+    clear: both;
+}
+
+/* 4. Contact List Fix: Prevents the "small box" issue */
+ul {
+    list-style: none;
+    width: 100%;
+    display: block;
+}
+
+ul li {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    
+    /* Force these boxes to be full width */
+    display: flex !important; 
+    align-items: center;
+    width: 100% !important; 
+    min-height: 70px;
+    
+    /* Forced visibility for the text */
+    color: #333333 !important;
+    font-size: 18px;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+ul li::before {
+    content: "🐾 ";
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+/* Force links (Email/Phone) to be visible purple */
+ul li a, 
+ul li span {
+    color: #6a0dad !important;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* 5. Form Styling Fix */
+form {
+    width: 100%;
+    display: block;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333 !important;
+}
+
+form input, 
+form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    display: block;
+}

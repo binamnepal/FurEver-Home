@@ -1,0 +1,86 @@
+.health-page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.health-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.health-header h1 {
+    font-size: 42px;
+    color: #6a0dad; /* Purple 700 */
+    margin-bottom: 10px;
+}
+
+.health-header p {
+    color: #6b7280; /* Gray 500 */
+    font-size: 18px;
+}
+
+
+.health-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.health-card {
+    background: #ffffff;
+    color: #333;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-bottom: 5px solid #8b5cf6; /* Purple 500 */
+}
+
+.health-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+
+.warning-banner {
+    background: linear-gradient(135deg, #fffafa, #fff0f0);
+    border: 2px solid #ff7a2a; /* Orange 600 */
+    border-radius: 12px;
+    color: #333;
+    padding: 30px;
+}
+
+.warning-banner h3 {
+    color: #ff7a2a;
+    margin-bottom: 15px;
+}
+
+.warning-banner ul {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.warning-banner li {
+    padding: 10px 0;
+    color: #333;
+    font-weight: 500;
+}
+
+.warning-banner li::before {
+    content: "🐾 ";
+    margin-right: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .health-header h1 { font-size: 32px; }
+    .health-grid { grid-template-columns: 1fr; }
+}

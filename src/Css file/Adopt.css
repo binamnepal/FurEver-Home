@@ -1,0 +1,203 @@
+/* =======================
+   GLOBAL & BODY FIXES
+========================== */
+.main-content {
+    flex: 1;
+    display: block; /* Changed from block to flex for proper centering */
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+}
+
+/* FORCE TEXT VISIBILITY - Crucial for your screenshots */
+h1, h2, h3 {
+    color: #6a0dad !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Fixes the white-on-white text issue in your cards */
+.left p, 
+.drop-text, 
+.drop-text ul li, 
+.intro-text,
+.intro-paragraph {
+    color: #000000 !important; 
+    visibility: visible !important;
+    opacity: 1 !important;
+    line-height: 1.6;
+}
+
+.left p:first-of-type {
+    color: #333333 !important;
+    padding: 10px;
+}
+
+/* =======================
+   NAVBAR
+========================== */
+.navbar-adopt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px 40px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.left-group,
+.right-group {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+.left-group a,
+.right-group a {
+    text-decoration: none;
+    color: #6a0dad;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.left-group a:hover,
+.right-group a:hover {
+    color: #ff7a2a;
+    background: rgba(255, 122, 42, 0.1);
+}
+
+/* =======================
+   HERO SECTION
+========================== */
+.adopt-hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: #6a0dad;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.hero-content h1 {
+    color: #ffffff !important;
+    font-size: 42px;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #ff7a2a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.hero-btn.outline {
+    background: transparent;
+    border: 2px solid #fff;
+}
+
+/* =======================
+   CARD GRID & TOGGLE LOGIC
+========================== */
+.card-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+    align-items: start; /* PREVENTS OTHER CARDS FROM OPENING/STRETCHING */
+}
+
+.card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.card.active {
+    box-shadow: 0 8px 16px rgba(106, 13, 173, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* DROPDOWN TEXT BOX - Fixes your last screenshot issue */
+.drop-text {
+    background: #f9f9f9;
+    padding: 20px;
+    border-top: 1px solid #eee;
+    text-align: left;
+    color: #000000 !important;
+}
+
+.drop-text ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.drop-text li {
+    margin-bottom: 8px;
+    color: #333 !important;
+}
+
+/* =======================
+   CONTAINER & MISC
+========================== */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+}
+
+.button {
+    display: inline-block;
+    margin: 15px auto 20px;
+    padding: 10px 22px;
+    background: #6a0dad;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* =======================
+   RESPONSIVE
+========================== */
+@media (max-width: 768px) {
+    .navbar-adopt {
+        padding: 12px 20px;
+        flex-direction: column;
+    }
+    .hero-content h1 { font-size: 30px; }
+}
