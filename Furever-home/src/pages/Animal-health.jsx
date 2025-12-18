@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../Css file/AnimalHealth.css'; // Ensure you rename your CSS file or update the path
+import '../Css file/AnimalHealth.css'; 
 
 const AnimalHealth = () => {
     const healthTips = [
@@ -48,7 +48,7 @@ const AnimalHealth = () => {
             
 
             <div className="warning-banner">
-                <h3>⚠️ Universal Emergency Signs</h3>
+                <h3>Universal Emergency Signs</h3>
                 <p>Regardless of the species, seek veterinary care if you notice:</p>
                 <ul>
                     <li>Difficulty breathing or unusual vocalization of pain</li>

@@ -93,7 +93,6 @@ export default function ContactUs() {
           </ul>
         </div>
 
-        {/* Map */}
         <div className="card">
   <div className="card map-container">
   <h2>Our Location</h2>

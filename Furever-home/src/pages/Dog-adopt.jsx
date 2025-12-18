@@ -1,4 +1,4 @@
-// src/pages/Dog-adopt.jsx
+
 
 import React from 'react';
 import DogCard from '../Component/DogCard';

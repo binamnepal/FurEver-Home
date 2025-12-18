@@ -85,7 +85,7 @@
           <h2>Your New Dog</h2>
 
           <div className="card-row">
-            {/* CARD 3 */}
+           
             <div className="card" onClick={() => toggle(2)}>
               <img src={dogtip} alt="adoption tips" />
               <h3>Pet Adoption Tips</h3>

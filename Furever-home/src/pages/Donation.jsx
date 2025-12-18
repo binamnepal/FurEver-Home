@@ -49,7 +49,7 @@ export default function Donation() {
           <input type="email" placeholder="Email Address" />
 
          
-          <button className="donate-btn">Donate ${amount}</button>
+          <button className="donate-btn" onClick={() => alert(`Donating $${amount}`)}>Donate ${amount}</button>
 
           <p className="secure-text">🔒 100% Secure Donation</p>
         </div>

@@ -25,16 +25,14 @@ export default function HomePage() {
 
   return (
     <div className="homepage-container">
-      {/* --- NAVBAR --- */}
+   
       <header className="navbar" ref={navRef}>
         <div className="nav-inner">
           
-          {/* Section 1: Logo & Brand (Left) */}
           <div className="nav-brand-section">
             <img src={logo} alt="FurEver Home Logo" className="logo" />
           </div>
 
-          {/* Section 2: Main Links (Center) */}
           <nav className="nav-links">
             <div
               className={`adopt-dropdown ${openDropdown === "adopt" ? "open" : ""}`}
@@ -84,7 +82,6 @@ export default function HomePage() {
             </div>
           </nav>
 
-          {/* Section 3: Login (Right) */}
           <div className="nav-auth-section">
             <Link to="/login" className="login-nav-btn">Login</Link>
           </div>
@@ -92,7 +89,6 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* --- HERO SECTION --- */}
       <section className="hero">
         <img src={heroImg} alt="FurEver Home" className="hero-img" />
         <div className="hero-content fade-in">
@@ -105,7 +101,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* --- CTA SECTION --- */}
+      
       <section className="cta">
         <div className="cta-inner">
           <h2>Want to Help?</h2>
@@ -116,7 +112,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* --- FOOTER --- */}
       <footer className="footer">
         <p>&copy; 2025 FurEver Home. All rights reserved.</p>
       </footer>

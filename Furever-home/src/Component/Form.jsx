@@ -44,7 +44,7 @@ const AdoptFormPage = () => {
                 </div>
 
                 <form onSubmit={handleSubmit} className="adoption-form">
-                    {/* PERSONAL INFORMATION */}
+                   
                     <fieldset>
                         <legend>Personal Information</legend>
                         
@@ -70,7 +70,7 @@ const AdoptFormPage = () => {
                         </div>
                     </fieldset>
 
-                    {/* ADOPTION DETAILS */}
+                   
                     <fieldset>
                         <legend>Adoption Details</legend>
                         <div className="input-group">
@@ -101,14 +101,13 @@ const AdoptFormPage = () => {
                         </div>
                     </fieldset>
 
-                    {/* DOCUMENT UPLOAD */}
                     <fieldset>
                         <legend>Documents</legend>
                         <label htmlFor="document">Upload Identity (ID/Passport/Citizenship)</label>
                         <input type="file" id="document" name="document" accept=".pdf,.jpg,.png" onChange={handleChange} required className="file-input" />
                     </fieldset>
 
-                    {/* AGREEMENT */}
+                
                     <div className="checkbox-section">
                         <input type="checkbox" id="agree" name="agree" checked={formData.agree} onChange={handleChange} required />
                         <label htmlFor="agree">I confirm that all provided information is accurate.</label>

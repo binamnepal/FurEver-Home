@@ -9,9 +9,9 @@ const LoginPage = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        // Add your authentication logic here
         console.log("Logging in with:", { username, password });
-        // Example: navigate('/dashboard');
+        alert("Login successful!");
+        navigate('/');
     };
 
     return (
