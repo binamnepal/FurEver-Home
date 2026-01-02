@@ -1,149 +1,293 @@
 import React, { useState } from 'react';
-import { 
-  LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, 
-  XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer 
-} from 'recharts';
 import '../Css file/Dashboard.css';
+import { Users, Heart, MapPin, DollarSign, TrendingUp, PawPrint, LogOut } from 'lucide-react';
 
-const Dashboard = () => {
-  const [timeRange, setTimeRange] = useState('monthly');
+const FurEverHomeDashboard = () => {
+  const [dashboardData] = useState({
+    stats: {
+      totalAdoptions: 342,
+      adoptionGrowth: 12.5,
+      totalDonations: 485000, 
+      donationGrowth: 8.3,
+      activePets: 67,
+      petsGrowth: -5.2,
+      totalDonors: 1247,
+      donorGrowth: 15.8
+    },
+    adoptionsByMonth: [
+      { month: 'Shrawan', adoptions: 25, donations: 35000 },
+      { month: 'Bhadra', adoptions: 32, donations: 42000 },
+      { month: 'Ashwin', adoptions: 28, donations: 38000 },
+      { month: 'Kartik', adoptions: 35, donations: 48000 },
+      { month: 'Mangsir', adoptions: 42, donations: 55000 },
+      { month: 'Poush', adoptions: 38, donations: 52000 }
+    ],
+    petCategories: [
+      { name: 'Dogs', percentage: 45, count: 154 },
+      { name: 'Cats', percentage: 35, count: 120 },
+      { name: 'Rabbits', percentage: 12, count: 41 },
+      { name: 'Birds', percentage: 5, count: 17 },
+      { name: 'Others', percentage: 3, count: 10 }
+    ],
+    adoptionByProvince: [
+      { province: 'Bagmati', percentage: 35, count: 120 },
+      { province: 'Gandaki', percentage: 18, count: 62 },
+      { province: 'Province 1', percentage: 15, count: 51 },
+      { province: 'Lumbini', percentage: 12, count: 41 },
+      { province: 'Sudurpashchim', percentage: 8, count: 27 },
+      { province: 'Karnali', percentage: 7, count: 24 },
+      { province: 'Madhesh', percentage: 5, count: 17 }
+    ],
+    recentDonations: [
+      { id: 1, donor: 'Ramesh Sharma', amount: 5000, date: '2026-01-02', purpose: 'Medical Fund' },
+      { id: 2, donor: 'Sita Thapa', amount: 3000, date: '2026-01-01', purpose: 'Food Supply' },
+      { id: 3, donor: 'Anonymous', amount: 10000, date: '2025-12-31', purpose: 'General' },
+      { id: 4, donor: 'Bijay Gurung', amount: 2500, date: '2025-12-30', purpose: 'Shelter Maintenance' }
+    ]
+  });
 
-  const statsCards = [
-    { title: 'Total Donations', value: 'NPR 2,847,500', change: '+18%', icon: '💰', color: 'orange' },
-    { title: 'Active Donors', value: '1,234', change: '+12%', icon: '👥', color: 'blue' },
-    { title: 'Pets Supported', value: '892', change: '+15%', icon: '❤️', color: 'pink' },
-    { title: 'Avg Donation', value: 'NPR 2,310', change: '+5%', icon: '📈', color: 'green' }
-  ];
+  const handleLogout = async () => {
+    console.log('Logout clicked');
+    alert('Logout functionality - Connect to your backend');
+  };
 
-  const donationTrend = [
-    { month: 'Shrawan', donations: 185000, donors: 145 },
-    { month: 'Bhadra', donations: 210000, donors: 168 },
-    { month: 'Asoj', donations: 245000, donors: 192 },
-    { month: 'Kartik', donations: 228000, donors: 178 },
-    { month: 'Mangsir', donations: 267000, donors: 215 },
-    { month: 'Poush', donations: 298000, donors: 234 }
-  ];
+  const colors = ['#8B5CF6', '#EC4899', '#F59E0B', '#10B981', '#3B82F6', '#EF4444', '#6366F1'];
 
-  const donationPurposes = [
-    { name: 'Medical', value: 35, color: '#f97316' },
-    { name: 'Food', value: 27, color: '#3b82f6' },
-    { name: 'Shelter', value: 20, color: '#8b5cf6' },
-    { name: 'Rescue', value: 14, color: '#10b981' },
-    { name: 'Training', value: 4, color: '#ec4899' }
-  ];
-
-  const nepalCities = [
-    { city: 'KTM', donations: 985000 },
-    { city: 'PKR', donations: 645000 },
-    { city: 'LTP', donations: 545000 },
-    { city: 'BHP', donations: 365000 },
-    { city: 'BRT', donations: 307500 }
-  ];
-
-  return (
-    <div className="db-container">
-      <div className="db-max-width">
-        {/* Header Section */}
-        <header className="db-header">
-          <div className="db-brand">
-            <div className="db-logo-box">🐾</div>
-            <div>
-              <h1>Furever Home</h1>
-              <p>Donation Tracker • Nepal</p>
-            </div>
-          </div>
-          <div className="db-header-actions">
-            <button className="btn-secondary">📅 Poush, 2081</button>
-            <button className="btn-primary">+ Add Donation</button>
-          </div>
-        </header>
-
-        {/* Top Statistics Cards */}
-        <section className="db-stats-grid">
-          {statsCards.map((stat, idx) => (
-            <div key={idx} className="stat-card">
-              <div className="stat-card-top">
-                <div className={`stat-icon-wrapper ${stat.color}`}>{stat.icon}</div>
-                <span className="stat-badge">{stat.change}</span>
+  return (  
+    <div className="dashboard">
+        <div className="sidebar">
+          <div className="logo-section">
+            <div className="logo-container">
+              <div className="logo-icon">
+                <PawPrint size={24} color="white" />
               </div>
-              <h3>{stat.title}</h3>
-              <p className="stat-value">{stat.value}</p>
-            </div>
-          ))}
-        </section>
-
-        {/* Main Charts Area */}
-        <div className="db-charts-main">
-          <div className="chart-box large">
-            <div className="chart-header">
-              <h2>Donation Trends</h2>
-              <select onChange={(e) => setTimeRange(e.target.value)}>
-                <option value="monthly">Monthly</option>
-                <option value="yearly">Yearly</option>
-              </select>
-            </div>
-            <ResponsiveContainer width="100%" height={300}>
-              <LineChart data={donationTrend}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
-                <XAxis dataKey="month" stroke="#94a3b8" />
-                <YAxis stroke="#94a3b8" />
-                <Tooltip />
-                <Line type="monotone" dataKey="donations" stroke="#f97316" strokeWidth={3} dot={{ r: 4 }} />
-                <Line type="monotone" dataKey="donors" stroke="#3b82f6" strokeWidth={3} dot={{ r: 4 }} />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
-
-          <div className="goal-card">
-            <h2>Annual Goal 2081</h2>
-            <div className="circular-progress">
-              <svg viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="45" className="bg" />
-                <circle cx="50" cy="50" r="45" className="fg" style={{ strokeDashoffset: '140' }} />
-              </svg>
-              <div className="progress-text">
-                <span className="percent">57%</span>
-                <span className="label">Achieved</span>
+              <div className="logo-text">
+                <h1>FurEver Home</h1>
+                <p>Nepal</p>
               </div>
             </div>
-            <div className="goal-details">
-              <div className="goal-row"><span>Target</span> <strong>5.0M</strong></div>
-              <div className="goal-row"><span>Current</span> <strong>2.8M</strong></div>
-            </div>
+          </div>
+
+          <nav className="nav">
+            <p className="nav-label">MAIN MENU</p>
+            <button className="nav-btn nav-btn-active">
+              <Users size={20} />
+              <span>Dashboard</span>
+            </button>
+            <button className="nav-btn nav-btn-inactive">
+              <PawPrint size={20} />
+              <span>Pets</span>
+            </button>
+            <button className="nav-btn nav-btn-inactive">
+              <Heart size={20} />
+              <span>Adoptions</span>
+            </button>
+            <button className="nav-btn nav-btn-inactive">
+              <DollarSign size={20} />
+              <span>Donations</span>
+            </button>
+          </nav>
+
+          <div className="logout-section">
+            <button className="logout-btn" onClick={handleLogout}>
+              <LogOut size={20} />
+              <span>Logout</span>
+            </button>
           </div>
         </div>
+        <div className="main-content">
+          <div className="header">
+            <h2>Dashboard</h2>
+            <p>Welcome back to FurEver Home</p>
+          </div>
+          <div className="stats-grid">
+            <div className="stat-card">
+              <div className="stat-header">
+                <div className="stat-icon stat-icon-purple">
+                  <Heart size={24} />
+                </div>
+                <span className={dashboardData.stats.adoptionGrowth >= 0 ? 'stat-growth stat-growth-positive' : 'stat-growth stat-growth-negative'}>
+                  {dashboardData.stats.adoptionGrowth >= 0 ? '↑' : '↓'} {Math.abs(dashboardData.stats.adoptionGrowth)}%
+                </span>
+              </div>
+              <h3 className="stat-label">Total Adoptions</h3>
+              <p className="stat-value">{dashboardData.stats.totalAdoptions}</p>
+            </div>
 
-        {/* Bottom Row */}
-        <div className="db-charts-sub">
-          <div className="chart-box">
-            <h2>Donation Distribution</h2>
-            <ResponsiveContainer width="100%" height={200}>
-              <PieChart>
-                <Pie data={donationPurposes} innerRadius={60} outerRadius={80} paddingAngle={5} dataKey="value">
-                  {donationPurposes.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={entry.color} />
-                  ))}
-                </Pie>
-                <Tooltip />
-              </PieChart>
-            </ResponsiveContainer>
+            <div className="stat-card">
+              <div className="stat-header">
+                <div className="stat-icon stat-icon-green">
+                  <DollarSign size={24} />
+                </div>
+                <span className={dashboardData.stats.donationGrowth >= 0 ? 'stat-growth stat-growth-positive' : 'stat-growth stat-growth-negative'}>
+                  {dashboardData.stats.donationGrowth >= 0 ? '↑' : '↓'} {Math.abs(dashboardData.stats.donationGrowth)}%
+                </span>
+              </div>
+              <h3 className="stat-label">Total Donations</h3>
+              <p className="stat-value">NPR {(dashboardData.stats.totalDonations / 1000).toFixed(0)}K</p>
+            </div>
+
+            <div className="stat-card">
+              <div className="stat-header">
+                <div className="stat-icon stat-icon-orange">
+                  <PawPrint size={24} />
+                </div>
+                <span className={dashboardData.stats.petsGrowth >= 0 ? 'stat-growth stat-growth-positive' : 'stat-growth stat-growth-negative'}>
+                  {dashboardData.stats.petsGrowth >= 0 ? '↑' : '↓'} {Math.abs(dashboardData.stats.petsGrowth)}%
+                </span>
+              </div>
+              <h3 className="stat-label">Available Pets</h3>
+              <p className="stat-value">{dashboardData.stats.activePets}</p>
+            </div>
+
+            <div className="stat-card">
+              <div className="stat-header">
+                <div className="stat-icon stat-icon-blue">
+                  <Users size={24} />
+                </div>
+                <span className={dashboardData.stats.donorGrowth >= 0 ? 'stat-growth stat-growth-positive' : 'stat-growth stat-growth-negative'}>
+                  {dashboardData.stats.donorGrowth >= 0 ? '↑' : '↓'} {Math.abs(dashboardData.stats.donorGrowth)}%
+                </span>
+              </div>
+              <h3 className="stat-label">Total Donors</h3>
+              <p className="stat-value">{dashboardData.stats.totalDonors}</p>
+            </div>
           </div>
 
-          <div className="chart-box">
-            <h2>Top Donation Cities</h2>
-            <ResponsiveContainer width="100%" height={200}>
-              <BarChart data={nepalCities}>
-                <XAxis dataKey="city" />
-                <YAxis hide />
-                <Tooltip />
-                <Bar dataKey="donations" fill="#f97316" radius={[4, 4, 0, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
+ 
+          <div className="chart-grid">
+            <div className="chart-card">
+              <div className="chart-header">
+                <h3 className="chart-title">Adoptions & Donations Trend</h3>
+                <div className="chart-legend">
+                  <div className="legend-item">
+                    <div className="legend-dot legend-dot-purple"></div>
+                    <span className="legend-label">Adoptions</span>
+                  </div>
+                  <div className="legend-item">
+                    <div className="legend-dot legend-dot-orange"></div>
+                    <span className="legend-label">Donations (K)</span>
+                  </div>
+                </div>
+              </div>
+              <div className="bar-chart">
+                {dashboardData.adoptionsByMonth.map((item, idx) => {
+                  const maxAdoption = Math.max(...dashboardData.adoptionsByMonth.map(d => d.adoptions));
+                  const maxDonation = Math.max(...dashboardData.adoptionsByMonth.map(d => d.donations));
+                  const adoptionHeight = (item.adoptions / maxAdoption) * 100;
+                  const donationHeight = (item.donations / maxDonation) * 100;
+                  
+                  return (
+                    <div key={idx} className="bar-group">
+                      <div className="bars">
+                        <div className="bar bar-purple" style={{ height: `${adoptionHeight}%` }}>
+                          <div className="bar-tooltip">{item.adoptions} adoptions</div>
+                        </div>
+                        <div className="bar bar-orange" style={{ height: `${donationHeight}%` }}>
+                          <div className="bar-tooltip">NPR {(item.donations / 1000).toFixed(0)}K</div>
+                        </div>
+                      </div>
+                      <span className="bar-label">{item.month}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+
+            <div className="chart-card">
+              <h3 className="chart-title">Adopted Pet Types</h3>
+              <div className="donut-container">
+                <svg className="donut-svg">
+                  {dashboardData.petCategories.reduce((acc, item, idx) => {
+                    const prevPercentage = acc.total;
+                    const percentage = item.percentage;
+                    const startAngle = (prevPercentage / 100) * 360;
+                    const endAngle = ((prevPercentage + percentage) / 100) * 360;
+                    const largeArc = percentage > 50 ? 1 : 0;
+                    
+                    const startX = 96 + 80 * Math.cos((Math.PI * startAngle) / 180);
+                    const startY = 96 + 80 * Math.sin((Math.PI * startAngle) / 180);
+                    const endX = 96 + 80 * Math.cos((Math.PI * endAngle) / 180);
+                    const endY = 96 + 80 * Math.sin((Math.PI * endAngle) / 180);
+                    
+                    acc.elements.push(
+                      <path
+                        key={idx}
+                        d={`M 96 96 L ${startX} ${startY} A 80 80 0 ${largeArc} 1 ${endX} ${endY} Z`}
+                        fill={colors[idx % colors.length]}
+                        className="donut-path"
+                      />
+                    );
+                    
+                    acc.total += percentage;
+                    return acc;
+                  }, { elements: [], total: 0 }).elements}
+                  <circle cx="96" cy="96" r="50" fill="white" />
+                </svg>
+              </div>
+              <div className="category-list">
+                {dashboardData.petCategories.map((item, idx) => (
+                  <div key={idx} className="category-item">
+                    <div className="category-name">
+                      <div className="category-dot" style={{ backgroundColor: colors[idx % colors.length] }}></div>
+                      <span className="category-label">{item.name}</span>
+                    </div>
+                    <span className="category-percent">{item.percentage}%</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+       
+          <div className="bottom-grid">
+       
+            <div className="chart-card">
+              <div className="chart-header">
+                <h3 className="chart-title">Adoptions by Province</h3>
+                <MapPin size={20} color="#9ca3af" />
+              </div>
+              <div className="province-list">
+                {dashboardData.adoptionByProvince.map((item, idx) => (
+                  <div key={idx}>
+                    <div className="province-item-header">
+                      <span className="province-name">{item.province}</span>
+                      <div className="province-stats">
+                        <span className="province-count">{item.count} adoptions</span>
+                        <span className="province-percent">{item.percentage}%</span>
+                      </div>
+                    </div>
+                    <div className="progress-bar">
+                      <div className="progress-fill" style={{ 
+                        width: `${item.percentage}%`,
+                        backgroundColor: colors[idx % colors.length]
+                      }}></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="chart-card">
+              <h3 className="chart-title">Recent Donations</h3>
+              <div className="donation-list">
+                {dashboardData.recentDonations.map((donation) => (
+                  <div key={donation.id} className="donation-item">
+                    <div className="donation-header">
+                      <span className="donor-name">{donation.donor}</span>
+                      <span className="donation-amount">NPR {donation.amount}</span>
+                    </div>
+                    <p className="donation-purpose">{donation.purpose}</p>
+                    <span className="donation-date">{donation.date}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
-export default Dashboard;
+export default FurEverHomeDashboard;
