@@ -1,9 +1,7 @@
 
-
 import React from 'react';
-import DogCard from '../Component/DogCard';
 import '../Css file/Adopt-section.css'; 
-import "../Css file/Body.css";
+import DogCard from '../Component/DogCard';
 import img1 from '../assets/Imges/dogs/Labrador.jpg';
 import img2 from '../assets/Imges/dogs/german-shepherd.jpeg';
 import img3 from '../assets/Imges/dogs/Chihuahua_Breed.png';

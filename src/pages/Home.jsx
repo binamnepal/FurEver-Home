@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import logo from "../assets/Imges/background/logo.jpeg";
 import heroImg from "../assets/Imges/background/pet background.jpg";
 import "../Css file/Homepage.css";
-import "../Css file/Body.css";
 
 export default function HomePage() {
   const [openDropdown, setOpenDropdown] = useState(null);

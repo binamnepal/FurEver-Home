@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import OthersCard from "../Component/OthersCard";
 import "../Css file/Others.css";
-import "../Css file/Body.css";
 import rabbit from "../assets/Imges/Others/Parrot.jpg";
 import hamster from "../assets/Imges/Others/hamsters.jpg";
 import parrot from "../assets/Imges/Others/Parrot.jpg";

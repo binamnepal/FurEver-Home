@@ -6,7 +6,6 @@
   import live from "../assets/Imges/background/live.jpeg";
   import homepet from "../assets/Imges/background/thingstodo.jpeg";
   import "../Css file/Adopt.css";
-  import "../Css file/Body.css";
 
   export default function Adopt() {
     const [openIndex, setOpenIndex] = useState(null);

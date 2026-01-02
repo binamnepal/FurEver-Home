@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import "../Css file/Donation.css";
-import "../Css file/Body.css";
+import "../Css file/Donation.css";;
 
 export default function Donation() {
   const [amount, setAmount] = useState(25);

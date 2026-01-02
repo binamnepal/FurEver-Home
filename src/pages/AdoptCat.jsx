@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CatCard from "../Component/CatCard";
 import "../Css file/cat-section.css";
-import "../Css file/Body.css";
 import persian from "../assets/Imges/cat/persian.jpeg";
 import siamese from "../assets/Imges/cat/siamese.jpeg";
 import bengal from "../assets/Imges/cat/bengal.jpeg";

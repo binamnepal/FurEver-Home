@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../Css file/Aboutus.css";
-import "../Css file/Body.css";
 
 export default function About() {
   return (

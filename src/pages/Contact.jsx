@@ -2,7 +2,6 @@ import React from "react";
 import "../Css file/Contactus.css"
 import { Link } from "react-router-dom";
 import Home from "./Home";
-import "../Css file/Body.css";
 export default function ContactUs() {
   return (
     <div>
