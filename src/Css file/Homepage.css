@@ -144,7 +144,7 @@ body {
 
 .hero-img {
   width: 100vw;
-  height: 900px; 
+  height: 900 px; 
   object-fit: cover;
   filter: brightness(55%) saturate(1.1);
 }

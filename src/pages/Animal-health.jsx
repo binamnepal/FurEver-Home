@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Css file/AnimalHealth.css'; 
 
-const AnimalHealth = () => {
+    const AnimalHealth = () => {
     const healthTips = [
         {
             title: "Balanced Nutrition",

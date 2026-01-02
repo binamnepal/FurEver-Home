@@ -1,0 +1,178 @@
+:root {
+  --bg-main: #f8fafc;
+  --white: #ffffff;
+  --gray-text: #64748b;
+  --dark-text: #1e293b;
+  --orange-grad: linear-gradient(135deg, #f97316, #fb923c);
+  --pink-grad: linear-gradient(135deg, #ec4899, #f472b6);
+  --blue-grad: linear-gradient(135deg, #3b82f6, #60a5fa);
+  --green-grad: linear-gradient(135deg, #10b981, #34d399);
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.db-container {
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.db-max-width {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header */
+.db-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.db-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.db-logo-box {
+  width: 56px;
+  height: 56px;
+  background: var(--orange-grad);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3);
+}
+
+.db-brand h1 { font-size: 1.8rem; color: var(--dark-text); font-weight: 800; }
+.db-brand p { color: var(--gray-text); font-size: 0.9rem; }
+
+.btn-primary {
+  background: var(--orange-grad);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Stats Cards */
+.db-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid #f1f5f9;
+}
+
+.stat-card-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.stat-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.stat-icon-wrapper.orange { background: var(--orange-grad); }
+.stat-icon-wrapper.blue { background: var(--blue-grad); }
+.stat-icon-wrapper.pink { background: var(--pink-grad); }
+.stat-icon-wrapper.green { background: var(--green-grad); }
+
+.stat-badge {
+  background: #f0fdf4;
+  color: #16a34a;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  height: fit-content;
+}
+
+.stat-card h3 { color: var(--gray-text); font-size: 0.85rem; margin-bottom: 0.4rem; }
+.stat-value { font-size: 1.6rem; font-weight: 800; color: var(--dark-text); }
+
+/* Main Section */
+.db-charts-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart-box {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.goal-card {
+  background: var(--orange-grad);
+  color: white;
+  padding: 2rem;
+  border-radius: 24px;
+  text-align: center;
+}
+
+/* Circular Goal Progress */
+.circular-progress {
+  position: relative;
+  width: 150px;
+  margin: 1.5rem auto;
+}
+
+.circular-progress circle {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.circular-progress circle.bg { stroke: rgba(255, 255, 255, 0.2); }
+.circular-progress circle.fg {
+  stroke: white;
+  stroke-dasharray: 283; /* 2 * PI * 45 */
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-text .percent { font-size: 1.8rem; font-weight: 800; }
+.progress-text .label { font-size: 0.7rem; opacity: 0.8; }
+
+.db-charts-sub {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}

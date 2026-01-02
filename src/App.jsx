@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from "./pages/Home";
 import About from "./pages/About-us.jsx";
 import ContactUs from "./pages/Contact.jsx";
@@ -12,6 +12,7 @@ import AnimalHealth from "./pages/Animal-health.jsx";
 import AdoptOthers from "./pages/OthersAnimal.jsx";
 import LoginPage from "./Component/Login.jsx";
 import Register from "./Component/Register.jsx";
+import Dashboard from "./Component/Dashboard.jsx";
 export default function App() {
   return (
     <BrowserRouter>
@@ -28,7 +29,16 @@ export default function App() {
         <Route path="/animal-health" element={<AnimalHealth/>} />
         <Route path="/login" element={<LoginPage/>} />
         <Route path="/register" element={<Register/>} />
-      </Routes>
+       <Route path="/" element={<Home/>} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route 
+            path="/dashboard" 
+            element={ 
+             localStorage.getItem("userToken") ? <Dashboard /> : <Navigate to="/login" />
+              } 
+              />
+         </Routes>
     </BrowserRouter>
-  );
-}
+        );
+       
+       }

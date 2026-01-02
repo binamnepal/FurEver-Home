@@ -9,9 +9,15 @@ const LoginPage = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        console.log("Logging in with:", { username, password });
-        alert("Login successful!");
-        navigate('/');
+        const adminUsername = "Admin";
+        const adminPassword = "Admin";
+        if (username === adminUsername && password === adminPassword) {
+            localStorage.setItem("userToken", "special_access_granted");
+            navigate("/dashboard");
+        } else {
+       
+            alert("Invalid Username or Password. Please try again.");
+        }
     };
 
     return (
