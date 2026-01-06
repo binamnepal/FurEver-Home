@@ -9,8 +9,9 @@ import guinea from "../assets/Imges/Others/Gunia.jpg";
 
 export default function AdoptOthers() {
   return (
-    <>
-      <Link to="/adopt" className="back-link-Others">
+
+      <div className="main-page">
+         <Link to="/adopt" className="back-link-Others">
         ← Back to Adoption Page
       </Link>
 
@@ -28,6 +29,8 @@ export default function AdoptOthers() {
         <OthersCard name="Bluey" breed="Parrot" age={2} imageSrc={parrot} />
         <OthersCard name="Pippin" breed="Guinea Pig" age={1} imageSrc={guinea} />
       </div>
-    </>
+    </div>
+
+
   );
 }

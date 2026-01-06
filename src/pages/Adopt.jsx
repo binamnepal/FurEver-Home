@@ -1,143 +1,121 @@
-  import React, { useState } from "react";
-  import logo from "../assets/Imges/background/logo.jpeg";
-  import todo from "../assets/Imges/background/todo.jpeg";
-  import name from "../assets/Imges/background/name.jpeg";
-  import dogtip from "../assets/Imges/background/Dogs adoptation.jpeg";
-  import live from "../assets/Imges/background/live.jpeg";
-  import homepet from "../assets/Imges/background/thingstodo.jpeg";
-  import "../Css file/Adopt.css";
+import React, { useState } from "react";
+import logo from "../assets/Imges/background/logo.jpeg";
+import todo from "../assets/Imges/background/todo.jpeg";
+import name from "../assets/Imges/background/name.jpeg";
+import dogtip from "../assets/Imges/background/Dogs adoptation.jpeg";
+import live from "../assets/Imges/background/live.jpeg";
+import homepet from "../assets/Imges/background/thingstodo.jpeg";
+import "../Css file/Adopt.css";
 
-  export default function Adopt() {
-    const [openIndex, setOpenIndex] = useState(null);
+export default function Adopt() {
+  const [openIndex, setOpenIndex] = useState(null);
 
-    const toggle = (i) => {
-      setOpenIndex(openIndex === i ? null : i);
-    };
+  const toggle = (i) => {
+    setOpenIndex(openIndex === i ? null : i);
+  };
 
-    return (
-      <div className="container">
-  
-        <div className="navbar-adopt">
-          <div className="left-group">
-            <img src={logo} alt="FurEver Home Logo" className="logo" />
-            <a href="/adopt-dog"><i className="find-dog"></i> Find a Dog</a>
-            <a href="/adopt-cat"><i className="find-cat"></i> Find a Cat</a>
-            <a href="adopt-others"><i className="Other"></i> Other Pets</a>
+  const articleData = [
+    {
+      id: 0,
+      title: "Things to Consider Before You Adopt",
+      img: todo,
+      points: [
+        "Assess your lifestyle and time commitment.",
+        "Consider the financial responsibilities.",
+        "Research breeds and their needs."
+      ]
+    },
+    {
+      id: 1,
+      title: "Cool Dog Names",
+      img: name,
+      points: [
+        "Trending: Bella, Nova, Luna, Max, and Charlie.",
+        "Choose names that are easy for pets to recognize.",
+        "Avoid names that sound like common commands."
+      ]
+    },
+    {
+      id: 2,
+      title: "Pet Adoption Tips",
+      img: dogtip,
+      points: [
+        "Start with patience and a consistent routine.",
+        "Prepare your home before the pet arrives.",
+        "Schedule a vet visit within the first week."
+      ]
+    }
+  ];
+
+  return (
+    <div className="adopt-page-wrapper">
+      {/* Navbar Section */}
+      <nav className="navbar-adopt">
+        <div className="nav-inner">
+          <div className="nav-logo-grp">
+            <img src={logo} alt="FurEver Home" className="logo" />
+            <span className="site-name">FurEver Home</span>
           </div>
-
-          <div className="right-group">
+          <div className="nav-links-grp">
             <a href="/">Home</a>
-            <a href="https://wvs.org.uk/news/10-reasons-why-you-should-adopt-dont-shop/">Articles</a>
-            <a href="/contact">Contact</a>
+            <a href="/articles">Articles</a>
+            <a href="/contact" className="nav-cta">Contact Us</a>
           </div>
         </div>
+      </nav>
 
-      
-        <div className="left">
-          <h1>Pet Adoption Articles</h1>
+      {/* Hero Section */}
+      <header className="adopt-hero">
+        <div className="hero-overlay"></div>
+        <div className="hero-text">
+          <span className="badge">Pet Adoption Articles</span>
+          <h1>Find Your Perfect Companion</h1>
+          <p>Thousands of loving pets are waiting for a forever home. Start your journey of unconditional love today.</p>
+        </div>
+      </header>
 
+      {/* Main Content Area */}
+      <main className="content-container">
+        <section className="intro-card">
           <p>
-            In simple terms, pet adoption is the process of taking permanent
-            responsibility for a pet from an animal shelter or rescue organization...
+            In simple terms, pet adoption is the process of taking permanent responsibility for a pet from an animal shelter or rescue organization. It is a rewarding journey that changes lives—both yours and theirs.
           </p>
+        </section>
 
-    <h2>Finding a pet</h2>
-    <div className="main-content">
-          <div className="card-row">
-            
-            <div className="card" onClick={() => toggle(0)}>
-              <img src={todo} alt="thingstodo" />
-              <h3>Things to Consider Before You Adopt</h3>
-
-              {openIndex === 0 && (
-                <div className="drop-text">
-                  <ul>
-                    <li>Assess your lifestyle and time commitment.</li>
-                    <li>Consider the financial responsibilities.</li>
-                    <li>Research breeds and their needs.</li>
-                    <li>Check if your home is pet-friendly.</li>
-                  </ul>
-                </div>
-              )}
-            </div>
-
-            
-            <div className="card" onClick={() => toggle(1)}>
-              <img src={name} alt="name" />
-              <h3>Cool Dog Names</h3>
-
-              {openIndex === 1 && (
-                <div className="drop-text">
-                  <ul>
-                    <li>Timmy</li>
-                    <li>Bella</li>
-                    <li>Bhote</li>
-                    <li>Nova</li>
-                    <li>Shray</li>
-                  </ul>
-                </div>
-              )}
-            </div>
-          </div> 
-
-        </div>
-          <h2>Your New Dog</h2>
-
-          <div className="card-row">
-           
-            <div className="card" onClick={() => toggle(2)}>
-              <img src={dogtip} alt="adoption tips" />
-              <h3>Pet Adoption Tips</h3>
-
-              {openIndex === 2 && (
-                <p className="drop-text">
-                  Start with patience, routine training, and give your pet time to adjust.
-                </p>
-              )}
-            </div>
-
+        <section className="article-section">
+          <h2 className="section-heading">01. Finding Your Pet</h2>
           
-            <div className="card" onClick={() => toggle(3)}>
-              <img src={live} alt="live" />
-              <h3>Living with Newly Adopted Pet</h3>
-
-              {openIndex === 3 && (
-                <p className="drop-text">
-                  Introduce them slowly and give each pet its own space.
-                </p>
-              )}
-            </div>
-
-            
-            <div className="card" onClick={() => toggle(4)}>
-              <img src={homepet} alt="home suitable" />
-              <h3>How to Make Your Home Pet-Friendly</h3>
-
-              {openIndex === 4 && (
-                <p className="drop-text">
-                  Remove hazards, secure wires, and keep harmful items away.
-                </p>
-              )}
-            </div>
+          <div className="article-grid">
+            {articleData.map((article) => (
+              <div 
+                key={article.id} 
+                className={`article-card ${openIndex === article.id ? 'active' : ''}`} 
+                onClick={() => toggle(article.id)}
+              >
+                <div className="card-img-box">
+                  <img src={article.img} alt={article.title} />
+                  <div className="img-overlay">Click to Read More</div>
+                </div>
+                
+                <div className="card-body">
+                  <span className="click-hint">Click to read more</span>
+                  <h3>{article.title}</h3>
+                  
+                  {/* The Expanded List Style */}
+                  <div className="expandable-list">
+                    {article.points.map((point, idx) => (
+                      <div className="list-item" key={idx}>
+                        <span className="paw-icon">🐾</span>
+                        <p>{point}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
-      </div>
-    );
-  }
-
-<section className="adopt-hero">
-  <div className="hero-overlay"></div>
-
-  <div className="hero-content">
-    <h1>Adopt a Pet, Save a Life</h1>
-    <p>
-      Thousands of loving pets are waiting for a forever home.
-      Start your adoption journey today.
-    </p>
-
-    <div className="hero-buttons">
-      <a href="/adopt-dog" className="hero-btn">Adopt a Dog</a>
-      <a href="/adopt-cat" className="hero-btn outline">Adopt a Cat</a>
+        </section>
+      </main>
     </div>
-  </div>
-</section>
+  );
+}

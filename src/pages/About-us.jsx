@@ -4,6 +4,7 @@ import "../Css file/Aboutus.css";
 
 export default function About() {
   return (
+  <div class="main-page">
     <div className="about-page">
       <div className="container">
         <Link to="/" className="back-link-about">← Back</Link>
@@ -49,5 +50,7 @@ export default function About() {
         </p>
       </div>
     </div>
+  </div>
   );
-}
+} 
+   

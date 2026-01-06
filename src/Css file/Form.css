@@ -1,17 +1,8 @@
-/* Layout Fixes */
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../assets/Imges/background/pet background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;   
-    min-height: 100vh;      
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
 }
+
 .adopt-form-wrapper {
     width: 100%;
     min-height: 100vh;

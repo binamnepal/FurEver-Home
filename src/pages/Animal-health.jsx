@@ -27,7 +27,8 @@ import '../Css file/AnimalHealth.css';
     ];
 
     return (
-        <div className="health-page-wrapper">
+  <div class="main-page">
+    <div className="health-page-wrapper">
             <Link to="/" className="back-link">← Back to Home</Link>
             
             <header className="health-header">
@@ -59,6 +60,7 @@ import '../Css file/AnimalHealth.css';
                 <p><strong>Knowing your pet's "normal" is the best way to spot an emergency early.</strong></p>
             </div>
         </div>
+  </div>
     );
 };
 

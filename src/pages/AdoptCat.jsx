@@ -10,7 +10,7 @@ import local2 from "../assets/Imges/cat/local cat 2.jpeg";
 
 export default function AdoptCat() {
   return (
-    <>
+    <div className="main-page">
       <Link to="/adopt" className="back-link-cat">
         ← Back to Adoption Page
       </Link>
@@ -30,6 +30,7 @@ export default function AdoptCat() {
         <CatCard name="Pummy" breed="Local" age={2} imageSrc={local1} />
         <CatCard name="Riva" breed="Local" age={1} imageSrc={local2} />
       </div>
-    </>
+    </div>
   );
 }
+

@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import Home from "./Home";
 export default function ContactUs() {
   return (
-    <div>
+      <div className="main-page">
+          <div>
     
       <Link to="/" className="back-link-contact">
         ← Back
@@ -108,5 +109,7 @@ export default function ContactUs() {
         </div>
       </div>
     </div>
+    </div>
+  
   );
 }

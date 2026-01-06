@@ -5,8 +5,8 @@ export default function Donation() {
   const [amount, setAmount] = useState(25);
 
   return (
-    
-    <div className="donation-page">
+        <div className="main-page">
+            <div className="donation-page">
        <button className="back-btn" onClick={() => window.history.back()}>
          ← Back
          </button>
@@ -65,5 +65,9 @@ export default function Donation() {
       </section>
        
     </div>
+    </div>
+
+
+  
   );
 }
