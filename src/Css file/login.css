@@ -1,63 +1,72 @@
-body {
+/* 1. Global Reset & Box Sizing */
+* {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding doesn't increase element width */
 }
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6;
+}
+.main-page {
+  background-color: #f4f7f6;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. Layout Container */
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f4f7f6; /* Light grey background to make white card pop */
-    font-family: 'Poppins', sans-serif;
     padding: 20px;
 }
+
+/* 3. The Login Card */
 .login-wrapper {
     width: 100%;
     max-width: 420px;
     background: #ffffff;
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Softer shadow for cleaner look */
     border: 1px solid #e1e1e1;
 }
 
 .login-wrapper h1 {
-    font-size: 32px;
+    font-size: 2rem;
     text-align: center;
-    color: #6a0dad; /* Your Purple */
+    color: #6a0dad; 
     margin-bottom: 30px;
     font-weight: 700;
 }
 
-/* Input Styles */
+/* 4. Input Groups */
 .input-box {
     position: relative;
     width: 100%;
-    height: 50px;
-    margin: 25px 0;
+    margin: 20px 0; /* Reduced margin slightly for tighter feel */
 }
 
 .input-box input {
     width: 100%;
-    height: 100%;
+    height: 50px;
     background: #fdfdfd;
     border: 1px solid #dcdcdc;
     outline: none;
     border-radius: 8px;
     font-size: 16px;
-    color: #333; /* Dark text */
-    padding: 0 45px 0 15px;
+    color: #333;
+    padding: 0 45px 0 15px; /* Right padding handles the icon space */
     transition: all 0.3s ease;
 }
 
 .input-box input:focus {
     border-color: #6a0dad;
-    box-shadow: 0 0 5px rgba(106, 13, 173, 0.1);
-}
-
-.input-box input::placeholder {
-    color: #aaa;
+    box-shadow: 0 0 8px rgba(106, 13, 173, 0.15);
 }
 
 .input-box i {
@@ -67,14 +76,16 @@ body {
     transform: translateY(-50%);
     font-size: 20px;
     color: #6a0dad;
+    pointer-events: none; /* Icon won't block clicks to the input */
 }
 
-/* Links and Checkbox */
+/* 5. Links & Checkbox */
 .remember-forgot {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 14px;
-    margin: -10px 0 25px;
+    margin: 15px 0 25px;
     color: #666;
 }
 
@@ -82,11 +93,14 @@ body {
     display: flex;
     align-items: center;
     cursor: pointer;
+    user-select: none;
 }
 
-.remember-forgot input {
+.remember-forgot input[type="checkbox"] {
     accent-color: #6a0dad;
-    margin-right: 6px;
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
 }
 
 .remember-forgot a {
@@ -99,7 +113,7 @@ body {
     text-decoration: underline;
 }
 
-/* Button Styling */
+/* 6. Primary Button */
 .login-btn {
     width: 100%;
     height: 50px;
@@ -110,45 +124,44 @@ body {
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .login-btn:hover {
     background: #520a85;
-    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(106, 13, 173, 0.2);
 }
 
 .login-btn:active {
-    transform: translateY(0);
+    transform: scale(0.98); /* Subtle "press" effect */
 }
 
-/* Footer Links */
+/* 7. Footer & Navigation */
 .register-link {
     text-align: center;
     margin-top: 25px;
-    font-size: 14.5px;
-    color: #444;
+    font-size: 14px;
+    color: #555;
 }
 
 .register-link a {
     color: #6a0dad;
     font-weight: 700;
     text-decoration: none;
-}
-
-.register-link a:hover {
-    text-decoration: underline;
+    margin-left: 5px;
 }
 
 .back-home {
     display: block;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 25px;
     font-size: 13px;
-    color: #888;
+    color: #999;
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 .back-home:hover {
     color: #6a0dad;
+    text-decoration: underline;
 }

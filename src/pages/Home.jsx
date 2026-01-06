@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import logo from "../assets/Imges/background/logo.jpeg";
 import heroImg from "../assets/Imges/background/pet background.jpg";
 import "../Css file/Homepage.css";
-
+import Max from "../assets/Imges/dogs/german-shepherd.jpeg"
+import Pummy from "../assets/Imges/cat/local-cat-1.jpg"
+import Buddy from "../assets/Imges/dogs/Labrador.jpg"
 export default function HomePage() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const navRef = useRef(null);
@@ -24,10 +26,10 @@ export default function HomePage() {
 
   return (
     <div className="homepage-container">
-   
+
       <header className="navbar" ref={navRef}>
         <div className="nav-inner">
-          
+
           <div className="nav-brand-section">
             <img src={logo} alt="FurEver Home Logo" className="logo" />
           </div>
@@ -100,7 +102,42 @@ export default function HomePage() {
         </div>
       </section>
 
-      
+      <section className="pet-suggestion-section">
+        <h2 className="section-title">Pets Looking for a Home</h2>
+
+        <div className="pet-card-grid">
+          <div className="pet-card">
+            <img src={Buddy} alt="Buddy the Dog" />
+            <div className="pet-info">
+              <h3>Khairey</h3>
+              <p>Age: 2 years</p>
+              <p>Friendly & playful dog</p>
+              <Link to="/adopt-dog" className="pet-btn">Adopt Me</Link>
+            </div>
+          </div>
+
+          <div className="pet-card">
+            <img src={Pummy} alt="Luna the Cat" />
+            <div className="pet-info">
+              <h3>Pummy</h3>
+              <p>Age: 1 year</p>
+              <p>Calm & loving cat</p>
+              <Link to="/adopt-cat" className="pet-btn">Adopt Me</Link>
+            </div>
+          </div>
+
+          <div className="pet-card">
+            <img src={Max} alt="Max the Puppy" />
+            <div className="pet-info">
+              <h3>Max</h3>
+              <p>Age: 6 months</p>
+              <p>Energetic puppy</p>
+              <Link to="/adopt-dog" className="pet-btn">Adopt Me</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="cta">
         <div className="cta-inner">
           <h2>Want to Help?</h2>
@@ -110,10 +147,30 @@ export default function HomePage() {
           <Link to="/donate" className="cta-btn">Donate</Link>
         </div>
       </section>
+<footer className="footer">
+  <div className="footer-inner">
+    {/* Contact & Social */}
+    <div className="footer-section contact">
+      <h3>Connect With Us</h3>
+      <div className="social">
+        <a href="/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="/" target="_blank" rel="noopener noreferrer">Twitter</a>
+      </div>
+      <div className="newsletter">
+        <p>Subscribe to our newsletter</p>
+        <input type="email" placeholder="Your email" />
+        <button>Subscribe</button>
+      </div>
+    </div>
 
-      <footer className="footer">
-        <p>&copy; 2025 FurEver Home. All rights reserved.</p>
-      </footer>
+  </div>
+
+  <div className="footer-bottom">
+    <p>&copy; 2025 FurEver Home. All rights reserved.</p>
+  </div>
+</footer>
+
     </div>
   );
 }

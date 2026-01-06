@@ -3,8 +3,6 @@ import logo from "../assets/Imges/background/logo.jpeg";
 import todo from "../assets/Imges/background/todo.jpeg";
 import name from "../assets/Imges/background/name.jpeg";
 import dogtip from "../assets/Imges/background/Dogs adoptation.jpeg";
-import live from "../assets/Imges/background/live.jpeg";
-import homepet from "../assets/Imges/background/thingstodo.jpeg";
 import "../Css file/Adopt.css";
 
 export default function Adopt() {
@@ -49,7 +47,7 @@ export default function Adopt() {
 
   return (
     <div className="adopt-page-wrapper">
-      {/* Navbar Section */}
+      
       <nav className="navbar-adopt">
         <div className="nav-inner">
           <div className="nav-logo-grp">
@@ -57,6 +55,8 @@ export default function Adopt() {
             <span className="site-name">FurEver Home</span>
           </div>
           <div className="nav-links-grp">
+            <a href="/adopt-cat">Cat</a>
+            <a href="/adopt-dog">Dog</a>
             <a href="/">Home</a>
             <a href="/articles">Articles</a>
             <a href="/contact" className="nav-cta">Contact Us</a>
@@ -64,7 +64,6 @@ export default function Adopt() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <header className="adopt-hero">
         <div className="hero-overlay"></div>
         <div className="hero-text">
@@ -74,7 +73,7 @@ export default function Adopt() {
         </div>
       </header>
 
-      {/* Main Content Area */}
+     
       <main className="content-container">
         <section className="intro-card">
           <p>
@@ -101,8 +100,7 @@ export default function Adopt() {
                   <span className="click-hint">Click to read more</span>
                   <h3>{article.title}</h3>
                   
-                  {/* The Expanded List Style */}
-                  <div className="expandable-list">
+                 <div className="expandable-list">
                     {article.points.map((point, idx) => (
                       <div className="list-item" key={idx}>
                         <span className="paw-icon">🐾</span>

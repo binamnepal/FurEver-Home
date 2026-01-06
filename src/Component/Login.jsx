@@ -21,6 +21,7 @@ const LoginPage = () => {
     };
 
     return (
+          <div class="main-page">
         <div className="login-container">
             <div className="login-wrapper">
                 <form onSubmit={handleLogin}>
@@ -64,6 +65,7 @@ const LoginPage = () => {
                     <Link to="/" className="back-home">← Back to Home</Link>
                 </form>
             </div>
+        </div>
         </div>
     );
 };

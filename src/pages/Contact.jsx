@@ -34,7 +34,6 @@ export default function ContactUs() {
           </ul>
         </div>
 
-        {/* Office Hours */}
         <div className="card">
           <h2>Office Hours</h2>
           <ul>
@@ -44,7 +43,7 @@ export default function ContactUs() {
           </ul>
         </div>
 
-        {/* Form */}
+    
         <div className="card">
           <h2>Send Us a Message</h2>
           <form

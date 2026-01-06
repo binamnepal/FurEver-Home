@@ -1,51 +1,59 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.cat-section {
- color: black;
-  padding: 30px;
-}
-
+/* Container for the cards */
 .cat-list {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  display: flex;          /* This puts items in a row */
+  flex-wrap: wrap;        /* This allows items to move to the next line if the screen is narrow */
+  gap: 20px;              /* Space between cards */
+  justify-content: center; /* Centers the row of cards */
   padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Individual Card Styling */
 .cat-card {
-  background-color: white;
-  color: black;
-  border-radius: 10px;
-  width: 220px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  text-align: center;
+  flex: 0 1 300px;        /* Fixes the width to roughly 300px so they sit side-by-side */
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Keeps internal content (image, name, age) vertical */
+  transition: transform 0.3s ease;
 }
 
+.cat-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Ensure images don't break the layout */
 .cat-card img {
   width: 100%;
-  border-radius: 8px;
-  margin-bottom: 10px;
+  height: 200px;
+  object-fit: cover;
 }
 
-.button {
-  display: inline-block;
-  background-color: #ff6f61;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 6px;
-  text-decoration: none;
-  margin-top: 10px;
+/* Internal padding for card text */
+.cat-card-info {
+  padding: 15px;
+  text-align: left;
 }
-.back-link-cat{
-    text-decoration: none;
-    background: #800080;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 8px;
-    font-size: 16px;
+
+/* Clean up the header and text area */
+.cat-section {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.cat-section h1 {
+  color: #6a1b9a; /* Matching your purple theme */
+  font-size: 2.5rem;
+}
+
+.back-link-cat {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #1e88e5;
+  margin-top: 20px;
 }
