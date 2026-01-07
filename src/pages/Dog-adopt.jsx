@@ -23,7 +23,7 @@ const AdoptDogPage = () => {
 
     return (
             <div className="main-page">
-                            <a href="/adopt" className="back-link-dog">
+                         <a href="/adopt" className="back-link-dog">
                 ← Back to Adoption Page
             </a>
 
@@ -42,11 +42,8 @@ const AdoptDogPage = () => {
                         imageSrc={dog.imageSrc} 
                     />
                 ))}
-            </div>
+          </div>
     </div>
-
-
-
     );
 };
 
